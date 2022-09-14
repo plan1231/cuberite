@@ -338,8 +338,7 @@ bool cPluginManager::CallHookChat(cPlayer & a_Player, AString & a_Message)
 			a_Player.SendMessageFailure(Printf("Something went wrong while executing command \"%s\"", a_Message.c_str()));
 			return true;
 		}
-
-		case crNoPermission:
+case crNoPermission:
 		{
 			// The player is not allowed to execute this command
 			a_Player.SendMessageFailure(Printf("Forbidden command; insufficient privileges: \"%s\"", a_Message.c_str()));
@@ -1091,6 +1090,18 @@ bool cPluginManager::CallHookProjectileHitEntity(cProjectileEntity & a_Projectil
 			return a_Plugin->OnProjectileHitEntity(a_Projectile, a_HitEntity);
 		}
 	);
+}
+
+
+
+
+
+bool cPluginManager::CallHookResourcePack(const UInt8 a_Status)
+{
+	return GenericCallHook(HOOK_RESOURCEPACK, [&](cPlugin * a_Plugin){
+				return a_Plugin->OnResourcePack(a_Status);
+			}
+		);
 }
 
 
