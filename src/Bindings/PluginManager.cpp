@@ -338,7 +338,8 @@ bool cPluginManager::CallHookChat(cPlayer & a_Player, AString & a_Message)
 			a_Player.SendMessageFailure(Printf("Something went wrong while executing command \"%s\"", a_Message.c_str()));
 			return true;
 		}
-case crNoPermission:
+
+		case crNoPermission:
 		{
 			// The player is not allowed to execute this command
 			a_Player.SendMessageFailure(Printf("Forbidden command; insufficient privileges: \"%s\"", a_Message.c_str()));
