@@ -1888,7 +1888,9 @@ void cClientHandle::HandleUseItem(bool a_UsedMainHand)
 void cClientHandle::HandleResourcePack(UInt8 a_Status)
 {
 	if (cRoot::Get()->GetPluginManager()->CallHookResourcePack(a_Status))
+	{
 		Kick("You must accept the resource pack");
+	}
 }
 
 
