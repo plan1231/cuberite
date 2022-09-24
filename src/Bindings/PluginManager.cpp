@@ -1099,7 +1099,8 @@ bool cPluginManager::CallHookProjectileHitEntity(cProjectileEntity & a_Projectil
 
 bool cPluginManager::CallHookResourcePack(const UInt8 a_Status)
 {
-	return GenericCallHook(HOOK_RESOURCEPACK, [&](cPlugin * a_Plugin){
+	return GenericCallHook(HOOK_RESOURCEPACK, [&](cPlugin * a_Plugin)
+			{
 				return a_Plugin->OnResourcePack(a_Status);
 			}
 		);
