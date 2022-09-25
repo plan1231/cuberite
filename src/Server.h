@@ -94,9 +94,6 @@ public:
 
 	// tolua_end
 
-	// If true, kicks the client if it rejects the server's resource pack
-	bool DoesRequireResourcePack(void) { return m_RequireResourcePack; }
-
 	const AString & GetResourcePackUrl(void) { return m_ResourcePackUrl; }
 
 	std::string_view GetCustomRedirectUrl(void) { return m_CustomRedirectUrl; }
@@ -226,7 +223,6 @@ private:
 	AString m_FaviconData;
 	size_t m_MaxPlayers;
 	bool m_bIsHardcore;
-	bool m_RequireResourcePack;
 	AString m_ResourcePackUrl;
 	AString m_CustomRedirectUrl;
 

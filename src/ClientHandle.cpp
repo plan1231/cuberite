@@ -1884,19 +1884,6 @@ void cClientHandle::HandleUseItem(bool a_UsedMainHand)
 
 
 
-// @param a_Status 0: successfully loaded, 1: declined, 2: failed download, 3: accepted
-void cClientHandle::HandleResourcePack(UInt8 a_Status)
-{
-	if (cRoot::Get()->GetPluginManager()->CallHookResourcePack(a_Status))
-	{
-		Kick("You must accept the resource pack");
-	}
-}
-
-
-
-
-
 void cClientHandle::HandleRespawn(void)
 {
 	if (m_Player->GetHealth() > 0)

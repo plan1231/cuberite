@@ -1097,19 +1097,6 @@ bool cPluginManager::CallHookProjectileHitEntity(cProjectileEntity & a_Projectil
 
 
 
-bool cPluginManager::CallHookResourcePack(const UInt8 a_Status)
-{
-	return GenericCallHook(HOOK_RESOURCEPACK, [&](cPlugin * a_Plugin)
-			{
-				return a_Plugin->OnResourcePack(a_Status);
-			}
-		);
-}
-
-
-
-
-
 bool cPluginManager::CallHookServerPing(cClientHandle & a_ClientHandle, AString & a_ServerDescription, int & a_OnlinePlayersCount, int & a_MaxPlayersCount, AString & a_Favicon)
 {
 	return GenericCallHook(HOOK_SERVER_PING, [&](cPlugin * a_Plugin)

@@ -880,15 +880,6 @@ bool cPluginLua::OnProjectileHitEntity(cProjectileEntity & a_Projectile, cEntity
 
 
 
-bool cPluginLua::OnResourcePack(const UInt8 a_Status)
-{
-	return CallSimpleHooks(cPluginManager::HOOK_RESOURCEPACK, a_Status);
-}
-
-
-
-
-
 bool cPluginLua::OnServerPing(cClientHandle & a_ClientHandle, AString & a_ServerDescription, int & a_OnlinePlayersCount, int & a_MaxPlayersCount, AString & a_Favicon)
 {
 	cOperation op(*this);
